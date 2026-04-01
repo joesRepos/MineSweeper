@@ -28,9 +28,23 @@ static void PlaceMines(char[,] board, int mineCount)
     }
 }
 
+static void PrintBoard(char[,] board)
+{
+    for (int r = 0; r < 5; r++)
+    {
+        for (int c = 0; c < 5; c++)
+        {
+            Console.Write(board[r, c] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
 char[,] hiddenBoard = new char[5, 5];
 char[,] visibleBoard = new char[5, 5];
 
 InitialiseBoards(hiddenBoard, visibleBoard);
 
 PlaceMines(hiddenBoard);
+
+PrintBoard(visibleBoard);

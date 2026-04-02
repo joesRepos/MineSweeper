@@ -47,4 +47,24 @@ InitialiseBoards(hiddenBoard, visibleBoard);
 
 PlaceMines(hiddenBoard);
 
-PrintBoard(visibleBoard);
+while (true)
+{
+    PrintBoard(visibleBoard);
+
+    Console.Write("Enter row (0-4): ");
+    int row = int.Parse(Console.ReadLine());
+
+    Console.Write("Enter col (0-4): ");
+    int col = int.Parse(Console.ReadLine());
+
+    // Check mine
+    if (hiddenBoard[row, col] == '*')
+    {
+        Console.WriteLine("Mine hit!");
+        break;
+    }
+    else
+    {
+        visibleBoard[row, col] = '0';
+    }
+}

@@ -1,4 +1,5 @@
-﻿static void InitialiseBoards(char[,] hidden, char[,] visible)
+﻿// Set up both the hidden and visible boards.
+static void InitialiseBoards(char[,] hidden, char[,] visible)
 {
     for (int r = 0; r < 5; r++)
     {
@@ -10,6 +11,7 @@
     }
 }
 
+// Place the mines on the inputted board.
 static void PlaceMines(char[,] board, int mineCount)
 {
     Random rand = new Random();
@@ -28,6 +30,8 @@ static void PlaceMines(char[,] board, int mineCount)
     }
 }
 
+
+// Displays the board.
 static void PrintBoard(char[,] board)
 {
     for (int r = 0; r < 5; r++)
@@ -47,6 +51,8 @@ InitialiseBoards(hiddenBoard, visibleBoard);
 
 PlaceMines(hiddenBoard);
 
+
+//Game loop.
 while (true)
 {
     PrintBoard(visibleBoard);
